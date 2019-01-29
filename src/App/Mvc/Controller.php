@@ -4,6 +4,10 @@ class Controller
 {
     public function index()
     {
-        echo "Hello Life";
+        $model = new Model;
+        $view = new View;
+
+        $view->showTypedTable($model->getTypedTable());
+        $view->showOriginalTable();
     }
 }
