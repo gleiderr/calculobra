@@ -1,18 +1,22 @@
 <table>
-  <tr>
-    <th>Traço</th>
-    <th>Cimento(ℓ)</th>
-    <th>Areia(ℓ)</th>
-    <th>Brita(ℓ)</th>
-    <th>Água(ℓ)</th>
-  </tr>
-  {% for row in rows %}
-  <tr>
-    <td>{{row['traço'][0]}}:{{row['traço'][1]}}:{{row['traço'][2]}}</td>
-    <td>{{row['cimento']}}</td>
-    <td>{{row['areia']}}</td>
-    <td>{{row['brita']}}</td>
-    <td>{{row['água']}}</td>
-  </tr>
-  {% endfor%}
+  <thead>
+    <tr>
+      <th>Traço</th>
+      <th class="right-align">Cimento(ℓ)</th>
+      <th class="right-align">Areia(ℓ)</th>
+      <th class="right-align">Brita(ℓ)</th>
+      <th class="right-align">Água(ℓ)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      <td>{{row['traço'][0]}}:{{row['traço'][1]}}:{{row['traço'][2]}}</td>
+      <td class="right-align">{{row['cimento']}}</td>
+      <td class="right-align">{{row['areia']}}</td>
+      <td class="right-align">{{row['brita']}}</td>
+      <td class="right-align">{{row['água']}}</td>
+    </tr>
+    {% endfor%}
+  </tbody>
 </table>

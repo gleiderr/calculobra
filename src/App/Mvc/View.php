@@ -10,18 +10,27 @@ class View
         $this->twig = new \Twig_Environment($loader);
     }
 
-    public function showTypedTable($typedTable)
+    public function header()
     {
-        echo "<h1>Tabela Compilada</h1>";
-        echo "<strong>Publicada 29/01/2019</strong>";
-        $template = $this->twig->load('caldas_branco_table.html');
-        echo $template->render(['rows' => $typedTable]);
+        echo $this->twig->load('header.html')->render();
+    }
+
+    public function footer()
+    {
+        echo $this->twig->load('footer.html')->render();
+    }
+
+    public function showTypedTable($typedTable)
+    {   
+        echo "<h4>Tabela Compilada</h4>";
+        echo "<strong><small>Publicada 29/01/2019 - Editada 30/01/2019</small></strong><br>";
+        echo $this->twig->load('caldas_branco_table.html')->render(['rows' => $typedTable]);
     }
 
     public function showOriginalTable()
     {
-        echo "<h1>Tabela Original</h1>";
-        echo "<strong>Publicada 28/01/2019</strong>";
+        echo "<h4>Tabela Original</h4>";
+        echo "<strong><small>Publicada 28/01/2019</small></strong><br>";
         echo '<img src="./tabela_caldas_branco.jpg" alt="Tabela Original Caldas Branco">';
     }
 }
