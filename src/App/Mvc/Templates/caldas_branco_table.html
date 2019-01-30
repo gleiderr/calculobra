@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Traço</th>
+    <th>Cimento(ℓ)</th>
+    <th>Areia(ℓ)</th>
+    <th>Brita(ℓ)</th>
+    <th>Água(ℓ)</th>
+  </tr>
+  {% for row in rows %}
+  <tr>
+    <td>{{row['traço'][0]}}:{{row['traço'][1]}}:{{row['traço'][2]}}</td>
+    <td>{{row['cimento']}}</td>
+    <td>{{row['areia']}}</td>
+    <td>{{row['brita']}}</td>
+    <td>{{row['água']}}</td>
+  </tr>
+  {% endfor%}
+</table>
